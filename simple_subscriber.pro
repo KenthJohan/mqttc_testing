@@ -7,7 +7,7 @@ CONFIG -= app_bundle
 CONFIG -= qt
 CONFIG += static
 
-SOURCES += test.c
+SOURCES += simple_subscriber.c
 
 DEFINES += __USE_MINGW_ANSI_STDIO
 
@@ -21,7 +21,11 @@ INCLUDEPATH += "C:/msys64/mingw64/include"
 #LIBS += -lwsock32
 #LIBS += -lws2_32
 
+QMAKE_LFLAGS = -static -static-libgcc
+
+LIBS += -lpaho-mqtt3a-static
 LIBS += -lpaho-mqtt3c-static
+LIBS += -lpthread
 LIBS += -lmingw32
 LIBS += -lrpcrt4
 LIBS += -lCrypt32
